@@ -2,13 +2,13 @@
 modLoader="javafml" #mandatory
 loaderVersion="${loader_version_range}" #mandatory
 license="${mod_license}"
-issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/"
+issueTrackerURL="https://github.com/seymourimadeit/tickle-tickle-tickle/issues"
 [[mods]] #mandatory
 
 modId="${mod_id}"
 version="${mod_version}"
 displayName="${mod_name}"
-displayURL="https://change.me.to.your.mods.homepage.example.invalid/"
+displayURL="www.curseforge.com/minecraft/mc-mods/tickle-tickle-tickle"
 authors="${mod_authors}" #optional
 description='''${mod_description}'''
 

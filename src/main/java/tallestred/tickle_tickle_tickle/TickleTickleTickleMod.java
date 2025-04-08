@@ -24,6 +24,8 @@ import tallestred.tickle_tickle_tickle.config.Config;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+import static net.minecraft.world.entity.LivingEntity.getSlotForHand;
+
 
 @Mod(TickleTickleTickleMod.MODID)
 public class TickleTickleTickleMod {
@@ -42,8 +44,9 @@ public class TickleTickleTickleMod {
         Player player = event.getEntity();
         ItemStack stack = event.getItemStack();
         LivingEntity hostile = (LivingEntity) event.getTarget();
-        if (stack.canPerformAction(net.neoforged.neoforge.common.ItemAbilities.BRUSH_BRUSH) && hostile instanceof Enemy && hostile.getData(TTTDataAttachments.TICKLED.get())) {
+        if (stack.canPerformAction(net.neoforged.neoforge.common.ItemAbilities.BRUSH_BRUSH) && hostile instanceof Enemy && !hostile.getData(TTTDataAttachments.TICKLED.get())) {
             player.swing(event.getHand(), true);
+            stack.hurtAndBreak(16, player, getSlotForHand(event.getHand()));
             if (!player.level().isClientSide) {
                 dropLoot.invoke(hostile, hostile.damageSources().generic(), false);
             }
