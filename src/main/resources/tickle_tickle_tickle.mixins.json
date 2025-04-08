@@ -1,8 +1,8 @@
 {
   "required": true,
-  "package": "com.example.examplemod.mixins",
+  "package": "tallestred.tickle_tickle_tickle.mixins",
   "compatibilityLevel": "JAVA_21",
-  "refmap": "examplemod.refmap.json",
+  "refmap": "tickle_tickle_tickle.refmap.json",
   "mixins": [
   ],
   "client":[
